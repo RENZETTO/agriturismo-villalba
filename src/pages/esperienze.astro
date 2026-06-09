@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { images } from '../data/images';
+import { pagePath, t } from '../i18n/ui';
+
+const lang = 'it';
+const strings = t(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="esperienze"
+  title="Esperienze"
+  description="Cena su richiesta, aperitivo con jacuzzi, corso di cucina contadina e colazione all'Agriturismo Villalba ad Arezzo. Non siamo un ristorante: servizi riservati agli ospiti."
+>
+  <PageHero
+    title="Le nostre esperienze"
+    subtitle="Cucina, relax e tradizione — sempre su richiesta"
+    image={images.dinner}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <p class="section__lead" style="text-align: center; margin: 0 auto 2rem;">
+        {strings.notRestaurant}
+      </p>
+
+      <!-- Cena su richiesta -->
+      <div class="experience-block">
+        <div class="experience-block__inner">
+          <div
+            class="experience-block__image"
+            style={`background-image: url('${images.dinner}')`}
+          ></div>
+          <div class="experience-block__content">
+            <span class="experience-block__tag" style="color: var(--color-terracotta);">
+              ✦ {strings.onRequest}
+            </span>
+            <h2>Cena su richiesta</h2>
+            <p>
+              Desideriamo fornire ai nostri ospiti un'esperienza culinaria memorabile durante il
+              soggiorno. Offriamo la cena come servizio di prenotazione, con un menù completo
+              composto da antipasti toscani come bruschette, crostini, affettati e formaggi,
+              preparati con ingredienti di alta qualità e selezionati con cura.
+            </p>
+            <p>
+              Per i primi piatti, proponiamo saporiti piatti al pomodoro o al ragù, cucinati con
+              passione e maestria. La selezione di secondi include carne alla brace o cacciagione,
+              servite con contorni di verdure fresche e di stagione.
+            </p>
+            <p>
+              In alternativa, organizziamo serate dedicate alla pizza, con una selezione di pizze
+              miste preparate al momento dalla nostra cucina. Per chi lo desidera, proponiamo in
+              vendita vino e olio di nostra produzione.
+            </p>
+            <a href={pagePath(lang, 'contatti')} class="btn btn--ghost">Richiedi la cena</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aperitivo con jacuzzi -->
+      <div class="experience-block">
+        <div class="experience-block__inner">
+          <div
+            class="experience-block__image"
+            style={`background-image: url('${images.jacuzzi}')`}
+          ></div>
+          <div class="experience-block__content">
+            <span class="experience-block__tag" style="color: var(--color-terracotta);">
+              ✦ {strings.onRequest}
+            </span>
+            <h2>Aperitivo con jacuzzi</h2>
+            <p>
+              Per rendere speciale il vostro soggiorno, su richiesta organizziamo un aperitivo
+              al tramonto con vista sulle colline aretine. Un momento di relax da vivere nel
+              giardino o sulla terrazza panoramica, accompagnato da taglieri di salumi e formaggi
+              locali, bruschette e un calice di vino della nostra produzione.
+            </p>
+            <p>
+              L'esperienza può essere arricchita con l'utilizzo della jacuzzi, per un'immersione
+              totale nel benessere tra natura e quiete toscana. Ideale per coppie, piccoli gruppi
+              o occasioni speciali.
+            </p>
+            <a href={pagePath(lang, 'contatti')} class="btn btn--ghost">Richiedi l'aperitivo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corso cucina -->
+      <div class="experience-block">
+        <div class="experience-block__inner">
+          <div
+            class="experience-block__image"
+            style={`background-image: url('${images.cooking}')`}
+          ></div>
+          <div class="experience-block__content">
+            <span class="experience-block__tag" style="color: var(--color-olive);">
+              ✦ {strings.onRequest}
+            </span>
+            <h2>Corso di cucina contadina</h2>
+            <p>
+              L'Agriturismo Villalba è un luogo immerso nella natura e nella tranquillità, dove è
+              possibile imparare l'arte culinaria della tradizione aretina grazie ai corsi di cucina
+              contadina organizzati dalla proprietaria. Questi corsi offrono un'esperienza unica per
+              conoscere l'autentica cucina locale e imparare le tecniche di preparazione dei piatti
+              più tipici, utilizzando solo prodotti freschi e genuini del territorio.
+            </p>
+            <p>
+              Durante il corso, gli ospiti possono apprendere come preparare piatti gustosi e
+              tradizionali, come la crostata di marmellata, la torta di verdure, la zuppa di cipolle
+              e molti altri. C'è l'opportunità di personalizzare il corso, scegliendo i piatti
+              preferiti, e di acquisire tutti i segreti della cucina contadina.
+            </p>
+            <p>
+              Una volta apprese le tecniche, potrete gustare le prelibatezze preparate durante il
+              corso. Inoltre, offriamo la possibilità di acquistare i prodotti locali utilizzati,
+              come vino, olio d'oliva, miele e altre specialità toscane.
+            </p>
+            <a href={pagePath(lang, 'contatti')} class="btn btn--ghost">Prenota un corso</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colazione -->
+      <div class="experience-block">
+        <div class="experience-block__inner">
+          <div
+            class="experience-block__image"
+            style={`background-image: url('${images.breakfast}')`}
+          ></div>
+          <div class="experience-block__content">
+            <span class="experience-block__tag" style="color: var(--color-olive);">
+              ✦ {strings.included}
+            </span>
+            <h2>Colazione in self service</h2>
+            <p>
+              La colazione è compresa nel soggiorno e viene allestita in modalità self service:
+              al vostro arrivo troverete tutto pronto per iniziare la giornata con serenità, senza
+              la rigidità di un servizio al tavolo.
+            </p>
+            <p>
+              Per chi desidera un'esperienza ancora più autentica, su richiesta prepariamo la nostra
+              crostata di marmellata fatta in casa, simbolo della cucina contadina toscana — la stessa
+              che imparerete nei nostri corsi di cucina.
+            </p>
+            <a href={pagePath(lang, 'contatti')} class="btn btn--ghost">Richiedi la crostata</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <CtaBand
+        lang={lang}
+        title="Organizza la tua esperienza"
+        text="Cene, aperitivi, corsi di cucina e colazioni speciali si prenotano in anticipo. Scrivici con date e numero di ospiti."
+      />
+    </div>
+  </section>
+</BaseLayout>

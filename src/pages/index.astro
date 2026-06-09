@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { images } from '../data/images';
+import { pagePath, t } from '../i18n/ui';
+
+const lang = 'it';
+const strings = t(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="home"
+  title="Agriturismo Villalba — San Marco Villalba, Arezzo"
+  description="Agriturismo a San Marco Villalba, nel verde delle colline aretine. Appartamenti indipendenti, colazione, cena su richiesta, corsi di cucina contadina e vista panoramica su Arezzo."
+>
+  <Hero
+    lang={lang}
+    eyebrow="Benvenuti nel nostro agriturismo"
+    title="Agriturismo a San Marco Villalba"
+    subtitle="Un paradiso tra le campagne di Arezzo"
+    image={images.hero}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <p class="section__eyebrow">Dal 2011</p>
+      <h2 class="section__title">Un'oasi di pace nelle colline toscane</h2>
+      <p class="section__lead">
+        La struttura di Villalba, in provincia di Arezzo, è diventata un'incantevole agriturismo
+        dall'ottobre 2011. Desideriamo offrire ai nostri ospiti un'esperienza autentica, tra
+        tranquillità, cucina locale e prodotti della terra.
+      </p>
+
+      <div class="card-grid" style="margin-top: 3rem;">
+        <a href={pagePath(lang, 'struttura')} class="card" style="text-decoration: none; color: inherit;">
+          <div class="card__image" style={`background-image: url('${images.farmhouse}')`}></div>
+          <div class="card__body">
+            <span class="card__badge">{strings.included}</span>
+            <h3>La struttura</h3>
+            <p>Appartamenti indipendenti con vista su Arezzo, giardino, piscina e parcheggio riservato.</p>
+          </div>
+        </a>
+        <a href={pagePath(lang, 'esperienze')} class="card" style="text-decoration: none; color: inherit;">
+          <div class="card__image" style={`background-image: url('${images.dinner}')`}></div>
+          <div class="card__body">
+            <span class="card__badge card__badge--request">{strings.onRequest}</span>
+            <h3>Esperienze culinarie</h3>
+            <p>Cena su richiesta, aperitivo con jacuzzi, corso di cucina contadina e colazione genuina.</p>
+          </div>
+        </a>
+        <a href={pagePath(lang, 'dintorni')} class="card" style="text-decoration: none; color: inherit;">
+          <div class="card__image" style={`background-image: url('${images.arezzo}')`}></div>
+          <div class="card__body">
+            <span class="card__badge">Toscana</span>
+            <h3>I dintorni</h3>
+            <p>A soli 5 km da Arezzo, tra borghi, città d'arte e la Via Romea per i pellegrini.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="feature">
+        <div class="feature__image" style={`background-image: url('${images.tuscany}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">La proposta culinaria</p>
+          <h2 class="section__title">Sapori autentici della tradizione toscana</h2>
+          <p>
+            Offriamo la cena come servizio di prenotazione, con un menù completo composto da
+            antipasti toscani come bruschette, crostini, affettati e formaggi, preparati con
+            ingredienti di alta qualità e selezionati con cura.
+          </p>
+          <p>
+            Per i primi piatti, proponiamo saporiti piatti al pomodoro o al ragù; tra i secondi,
+            carne alla brace o cacciagione con verdure fresche di stagione. In alternativa, serate
+            dedicate alla pizza preparata al momento.
+          </p>
+          <div class="notice">{strings.notRestaurant}</div>
+          <a href={pagePath(lang, 'esperienze')} class="btn btn--ghost">{strings.learnMore}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--olive">
+    <div class="container">
+      <p class="section__eyebrow">San Marco Villalba</p>
+      <h2 class="section__title">Ti aspettiamo tra le colline aretine</h2>
+      <p class="section__lead">
+        L'agriturismo Villalba è la scelta perfetta per chi vuole scoprire la bellezza della
+        Toscana e rifugiarsi nella tranquillità delle colline, godendo della deliziosa cucina
+        locale e dei prodotti della terra.
+      </p>
+      <div class="amenities">
+        <div class="amenity">
+          <div class="amenity__icon">🏡</div>
+          <h4>Appartamenti indipendenti</h4>
+          <p>Privacy e comfort per famiglie e gruppi</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🌄</div>
+          <h4>Vista su Arezzo</h4>
+          <p>Panorama mozzafiato dalla collina</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🐾</div>
+          <h4>Pet friendly</h4>
+          <p>I piccoli animali sono benvenuti</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🥾</div>
+          <h4>Via Romea</h4>
+          <p>Tappa ideale per i pellegrini</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <CtaBand
+        lang={lang}
+        title="Prenota il tuo soggiorno"
+        text="Verifica disponibilità su Booking oppure contattaci per cene, aperitivi, corsi di cucina e richieste speciali."
+      />
+    </div>
+  </section>
+</BaseLayout>

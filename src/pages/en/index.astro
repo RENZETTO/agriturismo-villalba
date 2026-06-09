@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { images } from '../../data/images';
+import { pagePath, t } from '../../i18n/ui';
+
+const lang = 'en';
+const strings = t(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="home"
+  title="Agriturismo Villalba — San Marco Villalba, Arezzo"
+  description="Holiday farm in San Marco Villalba, in the green hills of Arezzo. Independent apartments, breakfast, dinner on request, farmhouse cooking classes and panoramic views."
+>
+  <Hero
+    lang={lang}
+    eyebrow="Welcome to our holiday farm"
+    title="Holiday farm in San Marco Villalba"
+    subtitle="A paradise in the countryside of Arezzo"
+    image={images.hero}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <p class="section__eyebrow">Since 2011</p>
+      <h2 class="section__title">An oasis of peace in the Tuscan hills</h2>
+      <p class="section__lead">
+        Villalba, located in the province of Arezzo, has been an enchanting agritourism since October
+        2011. We wish to offer our guests an authentic experience of tranquillity, local cuisine and
+        products of the land.
+      </p>
+
+      <div class="card-grid" style="margin-top: 3rem;">
+        <a href={pagePath(lang, 'struttura')} class="card" style="text-decoration: none; color: inherit;">
+          <div class="card__image" style={`background-image: url('${images.farmhouse}')`}></div>
+          <div class="card__body">
+            <span class="card__badge">{strings.included}</span>
+            <h3>The farm</h3>
+            <p>Independent apartments with views of Arezzo, garden, pool and private parking.</p>
+          </div>
+        </a>
+        <a href={pagePath(lang, 'esperienze')} class="card" style="text-decoration: none; color: inherit;">
+          <div class="card__image" style={`background-image: url('${images.dinner}')`}></div>
+          <div class="card__body">
+            <span class="card__badge card__badge--request">{strings.onRequest}</span>
+            <h3>Culinary experiences</h3>
+            <p>Dinner on request, aperitif with jacuzzi, cooking class and genuine breakfast.</p>
+          </div>
+        </a>
+        <a href={pagePath(lang, 'dintorni')} class="card" style="text-decoration: none; color: inherit;">
+          <div class="card__image" style={`background-image: url('${images.arezzo}')`}></div>
+          <div class="card__body">
+            <span class="card__badge">Tuscany</span>
+            <h3>Surroundings</h3>
+            <p>Just 5 km from Arezzo, among villages, art cities and the Via Romea pilgrimage route.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="feature">
+        <div class="feature__image" style={`background-image: url('${images.tuscany}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">Our culinary offer</p>
+          <h2 class="section__title">Authentic flavours of Tuscan tradition</h2>
+          <p>
+            We offer dinner as a reservation service, with a full menu consisting of Tuscan hors
+            d'oeuvres such as bruschetta, crostini, sliced meats and cheeses, prepared with high
+            quality, carefully selected ingredients.
+          </p>
+          <p>
+            For first courses, we offer tasty tomato or meat sauce dishes; for mains, grilled meat
+            or game with fresh seasonal vegetables. Alternatively, we organise pizza evenings with
+            mixed pizzas freshly prepared by our kitchen.
+          </p>
+          <div class="notice">{strings.notRestaurant}</div>
+          <a href={pagePath(lang, 'esperienze')} class="btn btn--ghost">{strings.learnMore}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--olive">
+    <div class="container">
+      <p class="section__eyebrow">San Marco Villalba</p>
+      <h2 class="section__title">We are waiting for you in the Aretine hills</h2>
+      <p class="section__lead">
+        Agriturismo Villalba is the perfect choice for those who want to discover the beauty of
+        Tuscany and take refuge in the tranquillity of the hills, enjoying delicious local cuisine
+        and products of the land.
+      </p>
+      <div class="amenities">
+        <div class="amenity">
+          <div class="amenity__icon">🏡</div>
+          <h4>Independent apartments</h4>
+          <p>Privacy and comfort for families and groups</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🌄</div>
+          <h4>View of Arezzo</h4>
+          <p>Breathtaking panorama from the hill</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🐾</div>
+          <h4>Pet friendly</h4>
+          <p>Small animals are welcome</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🥾</div>
+          <h4>Via Romea</h4>
+          <p>Ideal stop for pilgrims</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <CtaBand
+        lang={lang}
+        title="Book your stay"
+        text="Check availability on Booking or contact us for dinners, aperitifs, cooking classes and special requests."
+      />
+    </div>
+  </section>
+</BaseLayout>

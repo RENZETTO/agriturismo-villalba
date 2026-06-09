@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { images } from '../../data/images';
+import { t } from '../../i18n/ui';
+
+const lang = 'en';
+const strings = t(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="struttura"
+  title="The Farm"
+  description="Independent apartments at Agriturismo Villalba: panoramic views of Arezzo, garden, 9x5 m pool, private parking and self-service breakfast."
+>
+  <PageHero
+    title="Our holiday farm"
+    subtitle="Comfort and privacy in the Aretine hills"
+    image={images.farmhouse}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="feature">
+        <div class="feature__image" style={`background-image: url('${images.farmhouse}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">Main villa</p>
+          <h2 class="section__title">A stay immersed in nature</h2>
+          <p>
+            The marvellous manor house, located in a quiet and panoramic area, consists of a flat and
+            an independent triple room, guaranteeing maximum privacy and the possibility of hosting
+            groups of friends or large families.
+          </p>
+          <p>
+            The flats are completely independent and equipped with every comfort, with a panoramic
+            view of the city of Arezzo. The property is ideal for both families and groups of friends;
+            an additional double bed can be added. Small animals are welcome.
+          </p>
+          <ul class="feature__list">
+            <li>Reserved car park within the property</li>
+            <li>Landscaped garden with unique panoramic corners</li>
+            <li>9×5 metre above-ground swimming pool</li>
+            <li>Panoramic open-air terrace with barbecue</li>
+            <li>Pet friendly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="feature feature--reverse">
+        <div class="feature__image" style={`background-image: url('${images.pool}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">Garden and relaxation</p>
+          <h2 class="section__title">Outdoor spaces for every season</h2>
+          <p>
+            The meticulously landscaped garden offers a variety of nooks that make the panorama
+            unique, with an excellent view of the valley below. You can enjoy dinner on the panoramic
+            open-air terrace with the barbecue available, or stay inside the finely furnished flat
+            equipped with every comfort.
+          </p>
+          <p>
+            The above-ground swimming pool is perfect for cooling off on hot summer days while
+            admiring the breathtaking scenery of the city of Arezzo.
+          </p>
+        </div>
+      </div>
+
+      <div class="amenities" style="margin-top: 3rem;">
+        <div class="amenity">
+          <div class="amenity__icon">🛏️</div>
+          <h4>Apartment</h4>
+          <p>Kitchenette, living room and private bathroom</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">📶</div>
+          <h4>Free Wi-Fi</h4>
+          <p>Connection throughout the property</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🅿️</div>
+          <h4>Private parking</h4>
+          <p>Reserved parking on site</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🔥</div>
+          <h4>Barbecue</h4>
+          <p>Equipped outdoor area</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="feature">
+        <div class="feature__image" style={`background-image: url('${images.breakfast}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">Breakfast</p>
+          <h2 class="section__title">A simple, genuine start to the day</h2>
+          <p>
+            Breakfast is included in your stay and served self-service style: everything will be
+            ready for you to start the day at your own pace, without restaurant-style schedules.
+          </p>
+          <p>
+            For an extra treat, you can also request our homemade jam tart, prepared according to
+            Tuscan farmhouse tradition.
+          </p>
+          <span class="card__badge">{strings.included}</span>
+          <span class="card__badge card__badge--request" style="margin-left: 0.5rem;">Tart on request</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <CtaBand
+        lang={lang}
+        title="Book your apartment"
+        text="Check availability on Booking or write to us with any questions about the property."
+      />
+    </div>
+  </section>
+</BaseLayout>

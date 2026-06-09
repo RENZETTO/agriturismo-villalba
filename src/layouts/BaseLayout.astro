@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { Lang } from '../data/site';
+import type { PageKey } from '../i18n/ui';
+import { site } from '../data/site';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const { lang, page, title, description, ogImage } = Astro.props;
+const fullTitle = page === 'home' ? title : `${title} | ${site.name}`;
+const image = ogImage ?? `${site.domain}/og-default.jpg`;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'it' ? 'it_IT' : 'en_GB'} />
+    <meta property="og:image" content={image} />
+    <link rel="canonical" href={`${site.domain}${Astro.url.pathname}`} />
+  </head>
+  <body>
+    <Header lang={lang} page={page} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+
+    <!-- Netlify form detection -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
+    <script>
+      const header = document.querySelector('.header');
+      const toggle = document.querySelector('.header__toggle');
+      const nav = document.querySelector('.header__nav');
+
+      window.addEventListener('scroll', () => {
+        header?.classList.toggle('header--scrolled', window.scrollY > 20);
+      });
+
+      toggle?.addEventListener('click', () => {
+        toggle.classList.toggle('open');
+        nav?.classList.toggle('open');
+      });
+
+      nav?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          toggle?.classList.remove('open');
+          nav?.classList.remove('open');
+        });
+      });
+    </script>
+  </body>
+</html>

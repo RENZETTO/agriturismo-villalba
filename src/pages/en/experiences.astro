@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { images } from '../../data/images';
+import { pagePath, t } from '../../i18n/ui';
+
+const lang = 'en';
+const strings = t(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="esperienze"
+  title="Experiences"
+  description="Dinner on request, aperitif with jacuzzi, farmhouse cooking class and breakfast at Agriturismo Villalba in Arezzo. We are not a restaurant."
+>
+  <PageHero
+    title="Our experiences"
+    subtitle="Food, relaxation and tradition — always on request"
+    image={images.dinner}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <p class="section__lead" style="text-align: center; margin: 0 auto 2rem;">
+        {strings.notRestaurant}
+      </p>
+
+      <div class="experience-block">
+        <div class="experience-block__inner">
+          <div class="experience-block__image" style={`background-image: url('${images.dinner}')`}></div>
+          <div class="experience-block__content">
+            <span class="experience-block__tag" style="color: var(--color-terracotta);">✦ {strings.onRequest}</span>
+            <h2>Dinner on request</h2>
+            <p>
+              We wish to provide our guests with a memorable culinary experience during their stay.
+              We offer dinner as a reservation service, with a full menu consisting of Tuscan hors
+              d'oeuvres such as bruschetta, crostini, sliced meats and cheeses, prepared with high
+              quality, carefully selected ingredients.
+            </p>
+            <p>
+              For first courses, we offer tasty tomato or meat sauce dishes, cooked with passion and
+              skill. Our selection of mains includes grilled meat or game, served with fresh seasonal
+              vegetables.
+            </p>
+            <p>
+              Alternatively, we offer pizza evenings with a selection of mixed pizzas freshly
+              prepared by our kitchen. We also offer our own wine and oil for sale.
+            </p>
+            <a href={pagePath(lang, 'contatti')} class="btn btn--ghost">Request dinner</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-block">
+        <div class="experience-block__inner">
+          <div class="experience-block__image" style={`background-image: url('${images.jacuzzi}')`}></div>
+          <div class="experience-block__content">
+            <span class="experience-block__tag" style="color: var(--color-terracotta);">✦ {strings.onRequest}</span>
+            <h2>Aperitif with jacuzzi</h2>
+            <p>
+              To make your stay special, on request we organise a sunset aperitif with views over
+              the Aretine hills. A relaxing moment in the garden or on the panoramic terrace,
+              accompanied by local cured meats and cheeses, bruschetta and a glass of our own wine.
+            </p>
+            <p>
+              The experience can be enhanced with use of the jacuzzi, for total wellbeing between
+              nature and Tuscan tranquillity. Ideal for couples, small groups or special occasions.
+            </p>
+            <a href={pagePath(lang, 'contatti')} class="btn btn--ghost">Request aperitif</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-block">
+        <div class="experience-block__inner">
+          <div class="experience-block__image" style={`background-image: url('${images.cooking}')`}></div>
+          <div class="experience-block__content">
+            <span class="experience-block__tag" style="color: var(--color-olive);">✦ {strings.onRequest}</span>
+            <h2>Farmhouse cooking class</h2>
+            <p>
+              Agriturismo Villalba is a place immersed in nature and tranquillity, where you can learn
+              the culinary art of the Aretine tradition through farmhouse cooking classes organised by
+              the owner. These courses offer a unique experience to discover authentic local cuisine
+              and learn how to prepare typical dishes using only fresh, genuine products from the area.
+            </p>
+            <p>
+              During the class, guests can learn how to prepare tasty traditional dishes such as jam
+              tart, vegetable pie, onion soup and many others. There is the opportunity to customise
+              the course by choosing preferred dishes and acquiring all the secrets of farmhouse cooking.
+            </p>
+            <p>
+              Once you have learned the techniques, you can enjoy the delicacies prepared during the
+              class. We also offer the chance to purchase local products used in the course, such as
+              wine, olive oil, honey and other Tuscan specialities.
+            </p>
+            <a href={pagePath(lang, 'contatti')} class="btn btn--ghost">Book a class</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-block">
+        <div class="experience-block__inner">
+          <div class="experience-block__image" style={`background-image: url('${images.breakfast}')`}></div>
+          <div class="experience-block__content">
+            <span class="experience-block__tag" style="color: var(--color-olive);">✦ {strings.included}</span>
+            <h2>Self-service breakfast</h2>
+            <p>
+              Breakfast is included in your stay and set up self-service style: on arrival you will
+              find everything ready to start the day peacefully, without the formality of table service.
+            </p>
+            <p>
+              For a more authentic experience, on request we prepare our homemade jam tart — a symbol
+              of Tuscan farmhouse cooking and the same recipe you will learn in our cooking classes.
+            </p>
+            <a href={pagePath(lang, 'contatti')} class="btn btn--ghost">Request the tart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <CtaBand
+        lang={lang}
+        title="Plan your experience"
+        text="Dinners, aperitifs, cooking classes and special breakfasts must be booked in advance. Write to us with dates and number of guests."
+      />
+    </div>
+  </section>
+</BaseLayout>

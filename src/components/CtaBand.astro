@@ -1,0 +1,36 @@
+---
+import { site } from '../data/site';
+import type { Lang } from '../data/site';
+import { pagePath, t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  text: string;
+}
+
+const { lang, title, text } = Astro.props;
+const strings = t(lang);
+const waText = encodeURIComponent(
+  lang === 'it'
+    ? 'Buongiorno, vorrei informazioni su Agriturismo Villalba'
+    : 'Hello, I would like information about Agriturismo Villalba'
+);
+const waUrl = `https://wa.me/393333570420?text=${waText}`;
+---
+
+<div class="cta-band">
+  <h2>{title}</h2>
+  <p>{text}</p>
+  <div class="cta-band__actions">
+    <a href={site.bookingUrl} class="btn btn--primary" target="_blank" rel="noopener">
+      {strings.book}
+    </a>
+    <a href={pagePath(lang, 'contatti')} class="btn btn--outline">
+      {strings.contact}
+    </a>
+    <a href={waUrl} class="btn btn--outline" target="_blank" rel="noopener">
+      {strings.whatsapp}
+    </a>
+  </div>
+</div>

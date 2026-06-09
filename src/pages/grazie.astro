@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pagePath, t } from '../i18n/ui';
+
+const lang = 'it';
+const strings = t(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="contatti"
+  title="Messaggio inviato"
+  description="Grazie per aver contattato Agriturismo Villalba."
+>
+  <section class="section section--white" style="min-height: 60vh; display: flex; align-items: center;">
+    <div class="container" style="text-align: center; max-width: 600px;">
+      <p class="section__eyebrow">Grazie</p>
+      <h1 class="section__title">Messaggio ricevuto</h1>
+      <p class="section__lead" style="margin: 0 auto 2rem;">
+        {strings.formSuccess}
+      </p>
+      <a href={pagePath(lang, 'home')} class="btn btn--olive">Torna alla home</a>
+    </div>
+  </section>
+</BaseLayout>

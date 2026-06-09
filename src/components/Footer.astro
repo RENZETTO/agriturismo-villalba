@@ -1,0 +1,57 @@
+---
+import { site } from '../data/site';
+import type { Lang } from '../data/site';
+import { nav, pagePath, t } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const strings = t(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">Agriturismo Villalba</div>
+        <p class="footer__tagline">{strings.footerTagline}</p>
+        <p>
+          {site.address}<br />
+          {site.city}
+        </p>
+      </div>
+
+      <div>
+        <h4>{lang === 'it' ? 'Navigazione' : 'Navigation'}</h4>
+        <ul>
+          {nav[lang].map((item) => (
+            <li>
+              <a href={pagePath(lang, item.page)}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4>{lang === 'it' ? 'Contatti' : 'Contact'}</h4>
+        <ul>
+          <li><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phoneDisplay}</a></li>
+          <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+          <li>
+            <a href={site.bookingUrl} target="_blank" rel="noopener">
+              Booking.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© {year} {site.name}. {strings.allRights}</span>
+      <span>{strings.vat} {site.vat}</span>
+    </div>
+  </div>
+</footer>

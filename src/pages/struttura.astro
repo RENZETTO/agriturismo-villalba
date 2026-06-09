@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { images } from '../data/images';
+import { pagePath, t } from '../i18n/ui';
+
+const lang = 'it';
+const strings = t(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="struttura"
+  title="La struttura"
+  description="Appartamenti indipendenti ad Agriturismo Villalba: vista panoramica su Arezzo, giardino, piscina 9x5 m, parcheggio riservato e colazione in self service."
+>
+  <PageHero
+    title="La nostra struttura"
+    subtitle="Comfort e privacy tra le colline aretine"
+    image={images.farmhouse}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="feature">
+        <div class="feature__image" style={`background-image: url('${images.farmhouse}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">Villa principale</p>
+          <h2 class="section__title">Un soggiorno immerso nel verde</h2>
+          <p>
+            La meravigliosa villa padronale, situata in una zona tranquilla e panoramica, è composta
+            da un appartamento e da una camera tripla indipendente, garantendo la massima privacy e
+            la possibilità di ospitare gruppi di amici o famiglie numerose.
+          </p>
+          <p>
+            Gli appartamenti sono completamente indipendenti e dotati di ogni comfort, con vista
+            panoramica sulla città di Arezzo. La struttura è ideale per famiglie e gruppi di amici;
+            è possibile aggiungere un letto matrimoniale supplementare.
+          </p>
+          <ul class="feature__list">
+            <li>Parcheggio riservato all'interno della proprietà</li>
+            <li>Giardino curato con angoli panoramici unici</li>
+            <li>Piscina fuori terra 9×5 metri</li>
+            <li>Terrazza panoramica all'aperto con barbecue</li>
+            <li>Piccoli animali benvenuti</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="feature feature--reverse">
+        <div class="feature__image" style={`background-image: url('${images.pool}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">Giardino e relax</p>
+          <h2 class="section__title">Spazi all'aperto per ogni stagione</h2>
+          <p>
+            Il giardino, meticolosamente curato, offre angoli suggestivi che rendono unico il
+            panorama, con l'aggiunta di un'eccellente vista sulla valle sottostante. Potrete
+            cenare sulla terrazza panoramica all'aperto utilizzando il barbecue disponibile, oppure
+            rimanere all'interno dell'appartamento, finemente arredato e dotato di ogni comfort.
+          </p>
+          <p>
+            La piscina fuori terra, perfetta per rinfrescarsi nelle calde giornate estive, si affaccia
+            sullo scenario mozzafiato della città di Arezzo.
+          </p>
+        </div>
+      </div>
+
+      <div class="amenities" style="margin-top: 3rem;">
+        <div class="amenity">
+          <div class="amenity__icon">🛏️</div>
+          <h4>Appartamento</h4>
+          <p>Angolo cottura, soggiorno e bagno privato</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">📶</div>
+          <h4>Wi-Fi gratuito</h4>
+          <p>Connessione in tutta la struttura</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🅿️</div>
+          <h4>Parcheggio privato</h4>
+          <p>Posto auto riservato in proprietà</p>
+        </div>
+        <div class="amenity">
+          <div class="amenity__icon">🔥</div>
+          <h4>Barbecue</h4>
+          <p>Area esterna attrezzata</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="feature">
+        <div class="feature__image" style={`background-image: url('${images.breakfast}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">Colazione</p>
+          <h2 class="section__title">La prima colazione, semplice e genuina</h2>
+          <p>
+            La colazione è compresa nel soggiorno e viene preparata in modalità self service: troverete
+            tutto pronto per iniziare la giornata con calma, senza orari rigidi da ristorante.
+          </p>
+          <p>
+            Per chi desidera un tocco in più, è possibile richiedere anche la nostra crostata di
+            marmellata, preparata secondo la tradizione contadina toscana.
+          </p>
+          <span class="card__badge">{strings.included}</span>
+          <span class="card__badge card__badge--request" style="margin-left: 0.5rem;">Crostata su richiesta</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <CtaBand
+        lang={lang}
+        title="Prenota il tuo appartamento"
+        text="Controlla le disponibilità su Booking o scrivici per qualsiasi domanda sulla struttura."
+      />
+    </div>
+  </section>
+</BaseLayout>

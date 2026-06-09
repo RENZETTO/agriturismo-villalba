@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { site } from '../../data/site';
+import { images } from '../../data/images';
+import { t } from '../../i18n/ui';
+
+const lang = 'en';
+const strings = t(lang);
+const waText = encodeURIComponent('Hello, I would like information about Agriturismo Villalba');
+const waUrl = `https://wa.me/393333570420?text=${waText}`;
+---
+
+<BaseLayout
+  lang={lang}
+  page="contatti"
+  title="Contact"
+  description="Contact Agriturismo Villalba in San Marco Villalba, Arezzo. Phone, email, WhatsApp and form for bookings, dinners and experiences."
+>
+  <PageHero
+    title="Contact us"
+    subtitle="We are here to answer your questions"
+    image={images.garden}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 class="section__title" style="font-size: 2rem; margin-bottom: 2rem;">Get in touch</h2>
+          <p class="section__lead" style="margin-bottom: 2rem;">
+            For apartment bookings use Booking. For dinners, aperitifs, cooking classes, special
+            breakfasts or any other request, contact us directly.
+          </p>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phoneDisplay}</a>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon">💬</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href={waUrl} target="_blank" rel="noopener">{strings.whatsapp}</a>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon">📍</div>
+            <div>
+              <h4>Address</h4>
+              <p>{site.address}<br />{site.city}</p>
+              <a href={site.mapsLink} target="_blank" rel="noopener" style="font-size: 0.9rem;">
+                Open in Google Maps →
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon">🏨</div>
+            <div>
+              <h4>Bookings</h4>
+              <a href={site.bookingUrl} target="_blank" rel="noopener">{strings.book} →</a>
+            </div>
+          </div>
+
+          <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--color-text-muted);">
+            {strings.legal}: {site.address}, {site.city}<br />
+            {strings.vat} {site.vat}
+          </p>
+        </div>
+
+        <ContactForm lang={lang} />
+      </div>
+
+      <div class="map-embed">
+        <iframe
+          src={site.mapsEmbed}
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Agriturismo Villalba map"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

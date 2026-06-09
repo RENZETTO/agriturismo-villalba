@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { images } from '../data/images';
+import { t } from '../i18n/ui';
+
+const lang = 'it';
+const strings = t(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="dintorni"
+  title="Dintorni"
+  description="Agriturismo Villalba a 5 km da Arezzo: escursioni in Toscana e Umbria, Via Romea, equitazione e borghi come Cortona, Castiglion Fiorentino e Anghiari."
+>
+  <PageHero
+    title="I dintorni"
+    subtitle="Toscana, Umbria e borghi senza tempo"
+    image={images.arezzo}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="feature">
+        <div class="feature__image" style={`background-image: url('${images.tuscany}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">La location</p>
+          <h2 class="section__title">Villalba e il borgo di San Marco</h2>
+          <p>
+            Villalba è un caratteristico borgo situato alle pendici di Lignano, a un'altezza di
+            292 metri. La sua origine risale all'epoca etrusca, ma nel corso del tempo è stata
+            abitata anche da nobili longobardi durante l'alto medioevo.
+          </p>
+          <p>
+            Oggi sono presenti poche abitazioni nel villaggio, ma la presenza della piccola e antica
+            chiesa di S. Maria regala un'atmosfera di tranquillità e serenità. Ciò che rende
+            Villalba un luogo unico è la spettacolare vista panoramica sulla città di Arezzo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <p class="section__eyebrow">Posizione strategica</p>
+      <h2 class="section__title">A 5 km dal centro di Arezzo</h2>
+      <p class="section__lead">
+        L'agriturismo si trova in posizione strategica, incorniciato nel verde della campagna
+        toscana e circondato dai suggestivi borghi delle province di Arezzo, Siena, Perugia e Firenze.
+      </p>
+
+      <div class="card-grid" style="margin-top: 2.5rem;">
+        <div class="card">
+          <div class="card__body">
+            <h3>Arezzo</h3>
+            <p>
+              Città d'arte a pochi minuti: Piazza Grande, la Giostra del Saracino, il Duomo e i
+              tesori nascosti di ogni angolo. Chianina e Chianti vi aspettano nelle trattorie locali.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Borghi e natura</h3>
+            <p>
+              Castiglion Fiorentino, Cortona, il Lago Trasimeno, Poppi, Sansepolcro e Anghiari sono
+              raggiungibili in giornata per escursioni indimenticabili.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Città d'arte</h3>
+            <p>
+              Firenze, Siena e Perugia distano poche decine di chilometri: tre capitali culturali
+              da abbinare al relax dell'agriturismo.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Equitazione</h3>
+            <p>
+              L'Arezzo Equestrian Centre dista solo 7 minuti d'auto: ideale per chi ama cavalli e
+              passeggiate nella natura.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Via Romea</h3>
+            <p>
+              L'agriturismo si trova sulla Via Santa o Via Romea: una tappa perfetta per i
+              pellegrini in viaggio, tra spiritualità e bellezze del territorio.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Passeggiate</h3>
+            <p>
+              Immerso nelle splendide colline toscane, il territorio invita a passeggiate ed
+              escursioni a piedi tra ulivi, vigneti e sentieri panoramici.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <CtaBand
+        lang={lang}
+        title="Vieni a scoprire la Toscana"
+        text="Prenota il tuo soggiorno e usa Villalba come base per esplorare Arezzo e dintorni."
+      />
+    </div>
+  </section>
+</BaseLayout>

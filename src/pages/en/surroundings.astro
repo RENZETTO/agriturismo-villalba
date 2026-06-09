@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { images } from '../../data/images';
+import { t } from '../../i18n/ui';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  page="dintorni"
+  title="Surroundings"
+  description="Agriturismo Villalba 5 km from Arezzo: excursions in Tuscany and Umbria, Via Romea, horse riding and villages like Cortona and Anghiari."
+>
+  <PageHero
+    title="The surroundings"
+    subtitle="Tuscany, Umbria and timeless villages"
+    image={images.arezzo}
+  />
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="feature">
+        <div class="feature__image" style={`background-image: url('${images.tuscany}')`}></div>
+        <div class="feature__content">
+          <p class="section__eyebrow">The location</p>
+          <h2 class="section__title">Villalba and San Marco village</h2>
+          <p>
+            Villalba is a characteristic village located on the slopes of Lignano, at an altitude of
+            292 metres. Its origin dates back to Etruscan times, but over time it was also inhabited
+            by Lombard nobles during the early Middle Ages.
+          </p>
+          <p>
+            Today, there are few houses in the village, but the presence of the small, ancient church
+            of S. Maria provides an atmosphere of tranquillity and serenity. What makes Villalba a
+            unique place is the spectacular panoramic view it offers of the city of Arezzo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <p class="section__eyebrow">Strategic position</p>
+      <h2 class="section__title">Just 5 km from the centre of Arezzo</h2>
+      <p class="section__lead">
+        The agritourism is located in a strategic position, framed by the green Tuscan countryside
+        and surrounded by the charming villages of the provinces of Arezzo, Siena, Perugia and Florence.
+      </p>
+
+      <div class="card-grid" style="margin-top: 2.5rem;">
+        <div class="card">
+          <div class="card__body">
+            <h3>Arezzo</h3>
+            <p>
+              Art city minutes away: Piazza Grande, the Giostra del Saracino, the Cathedral and hidden
+              treasures on every corner. Chianina beef and Chianti await in local trattorias.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Villages and nature</h3>
+            <p>
+              Castiglion Fiorentino, Cortona, Lake Trasimeno, Poppi, Sansepolcro and Anghiari are
+              within day-trip distance for unforgettable excursions.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Art cities</h3>
+            <p>
+              Florence, Siena and Perugia are a short drive away: three cultural capitals to combine
+              with the relaxation of the holiday farm.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Horse riding</h3>
+            <p>
+              The Arezzo Equestrian Centre is only a 7-minute drive away — ideal for horse lovers and
+              walks in nature.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Via Romea</h3>
+            <p>
+              The agriturismo is on the Via Santa or Via Romea, making it a perfect stop for travelling
+              pilgrims, combining spirituality with the area's natural beauty.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Walks</h3>
+            <p>
+              Immersed in the beautiful Tuscan hills, the area invites walks and hikes among olive
+              groves, vineyards and panoramic trails.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <CtaBand
+        lang={lang}
+        title="Come and discover Tuscany"
+        text="Book your stay and use Villalba as a base to explore Arezzo and the surrounding area."
+      />
+    </div>
+  </section>
+</BaseLayout>
