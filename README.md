@@ -37,7 +37,3 @@ Output in `dist/`
 ## Foto
 
 Sostituire le immagini placeholder in `src/data/images.ts` con foto reali in `public/images/`.
-
-## Form contatti
-
-Il modulo usa [Netlify Forms](https://docs.netlify.com/forms/setup/). Dopo il deploy, i messaggi arrivano nel pannello Netlify.

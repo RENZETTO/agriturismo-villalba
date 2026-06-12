@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import ContactForm from '../components/ContactForm.astro';
 import { site } from '../data/site';
 import { images } from '../data/images';
 import { t } from '../i18n/ui';
@@ -16,7 +15,7 @@ const waUrl = `https://wa.me/393333570420?text=${waText}`;
   lang={lang}
   page="contatti"
   title="Contatti"
-  description="Contatta Agriturismo Villalba a San Marco Villalba, Arezzo. Telefono, email, WhatsApp e modulo per richieste su prenotazioni, cene e esperienze."
+  description="Contatta Agriturismo Villalba a San Marco Villalba, Arezzo. Telefono, email, WhatsApp e Booking per prenotazioni, cene ed esperienze."
 >
   <PageHero
     title="Contatti"
@@ -25,73 +24,54 @@ const waUrl = `https://wa.me/393333570420?text=${waText}`;
   />
 
   <section class="section section--white">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2 class="section__title" style="font-size: 2rem; margin-bottom: 2rem;">
-            Scrivici o chiamaci
-          </h2>
-          <p class="section__lead" style="margin-bottom: 2rem;">
-            Per prenotazioni dell'appartamento usa Booking. Per cene, aperitivi, corsi di cucina,
-            colazioni speciali o qualsiasi altra richiesta, contattaci direttamente.
-          </p>
-
-          <div class="contact-info__item">
-            <div class="contact-info__icon">📞</div>
-            <div>
-              <h4>Telefono</h4>
-              <a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phoneDisplay}</a>
-            </div>
-          </div>
-
-          <div class="contact-info__item">
-            <div class="contact-info__icon">✉️</div>
-            <div>
-              <h4>Email</h4>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-            </div>
-          </div>
-
-          <div class="contact-info__item">
-            <div class="contact-info__icon">💬</div>
-            <div>
-              <h4>WhatsApp</h4>
-              <a href={waUrl} target="_blank" rel="noopener">{strings.whatsapp}</a>
-            </div>
-          </div>
-
-          <div class="contact-info__item">
-            <div class="contact-info__icon">📍</div>
-            <div>
-              <h4>Indirizzo</h4>
-              <p>
-                {site.address}<br />
-                {site.city}
-              </p>
-              <a href={site.mapsLink} target="_blank" rel="noopener" style="font-size: 0.9rem;">
-                Apri in Google Maps →
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-info__item">
-            <div class="contact-info__icon">🏨</div>
-            <div>
-              <h4>Prenotazioni</h4>
-              <a href={site.bookingUrl} target="_blank" rel="noopener">
-                {strings.book} →
-              </a>
-            </div>
-          </div>
-
-          <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--color-text-muted);">
-            {strings.legal}: {site.address}, {site.city}<br />
-            {strings.vat} {site.vat}
-          </p>
-        </div>
-
-        <ContactForm lang={lang} />
+    <div class="container contact-page">
+      <div class="contact-page__intro">
+        <h2 class="section__title">Scrivici o chiamaci</h2>
+        <p class="section__lead">
+          Per prenotazioni dell'appartamento usa Booking. Per cene, aperitivi, corsi di cucina,
+          colazioni speciali o qualsiasi altra richiesta, contattaci direttamente.
+        </p>
       </div>
+
+      <div class="contact-cards">
+        <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="contact-card">
+          <div class="contact-card__icon">📞</div>
+          <h3>Telefono</h3>
+          <p>{site.phoneDisplay}</p>
+        </a>
+
+        <a href={`mailto:${site.email}`} class="contact-card">
+          <div class="contact-card__icon">✉️</div>
+          <h3>Email</h3>
+          <p>{site.email}</p>
+        </a>
+
+        <a href={waUrl} class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card__icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>{strings.whatsapp}</p>
+        </a>
+
+        <a href={site.bookingUrl} class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card__icon">🏨</div>
+          <h3>Prenotazioni</h3>
+          <p>{strings.book}</p>
+        </a>
+
+        <a href={site.mapsLink} class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card__icon">📍</div>
+          <h3>Indirizzo</h3>
+          <p>
+            {site.address}<br />
+            {site.city}
+          </p>
+        </a>
+      </div>
+
+      <p class="contact-page__legal">
+        {strings.legal}: {site.address}, {site.city}<br />
+        {strings.vat} {site.vat}
+      </p>
 
       <div class="map-embed">
         <iframe
