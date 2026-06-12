@@ -19,11 +19,16 @@ const strings = t(lang);
       Villalba <span>Agriturismo</span>
     </a>
 
-    <button class="header__toggle" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="header__mobile-end">
+      <a href={switchPath(lang, page)} class="header__lang header__lang--bar" aria-label={lang === 'it' ? 'Switch to English' : 'Passa all\'italiano'}>
+        {strings.langSwitch}
+      </a>
+      <button class="header__toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
     <nav class="header__nav">
       <ul class="header__links">
@@ -39,7 +44,9 @@ const strings = t(lang);
         ))}
       </ul>
       <div class="header__actions">
-        <a href={switchPath(lang, page)} class="header__lang">{strings.langSwitch}</a>
+        <a href={switchPath(lang, page)} class="header__lang header__lang--nav" aria-label={lang === 'it' ? 'Switch to English' : 'Passa all\'italiano'}>
+          {strings.langSwitch}
+        </a>
         <a href={site.bookingUrl} class="btn btn--primary" target="_blank" rel="noopener">
           {strings.book}
         </a>
