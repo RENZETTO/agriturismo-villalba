@@ -6,8 +6,6 @@ export const images = {
     'https://images.unsplash.com/photo-1523532014332-89148b9acdc4?w=1200&q=80',
   farmhouse:
     'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-  pool:
-    'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
   garden:
     'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80',
   dinner:

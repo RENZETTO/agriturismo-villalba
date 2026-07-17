@@ -21,7 +21,7 @@
   --radius: 4px;
   --radius-lg: 12px;
   --max-width: 1200px;
-  --header-height: 80px;
+  --header-height: 88px;
   --transition: 0.3s ease;
 }
 
@@ -206,15 +206,29 @@ p:last-child { margin-bottom: 0; }
 }
 
 .header__logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-brown);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   text-decoration: none;
-  letter-spacing: 0.02em;
 }
 
-.header__logo span {
+.header__logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.header__logo-text {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-brown);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.header__logo-text span {
   color: var(--color-olive);
 }
 
@@ -834,11 +848,23 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-cream);
   margin-bottom: 0.75rem;
+}
+
+.footer__logo-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-cream);
 }
 
 .footer__tagline {
@@ -901,8 +927,13 @@ main {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .header__logo {
-    font-size: 1.25rem;
+  .header__logo-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .header__logo-text {
+    font-size: 1.15rem;
   }
 
   .header__mobile-end {

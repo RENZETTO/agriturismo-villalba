@@ -16,7 +16,16 @@ const strings = t(lang);
 <header class="header">
   <div class="container header__inner">
     <a href={pagePath(lang, 'home')} class="header__logo">
-      Villalba <span>Agriturismo</span>
+      <img
+        src="/logo_villalba.png"
+        alt={site.name}
+        width="56"
+        height="56"
+        class="header__logo-img"
+      />
+      <span class="header__logo-text">
+        Villalba <span>Agriturismo</span>
+      </span>
     </a>
 
     <div class="header__mobile-end">
