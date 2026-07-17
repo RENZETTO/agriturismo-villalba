@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CtaBand from '../../components/CtaBand.astro';
-import { images } from '../../data/images';
+import { gallery, images } from '../../data/images';
 import { t } from '../../i18n/ui';
 
 const lang = 'en';
@@ -97,7 +97,7 @@ const strings = t(lang);
   <section class="section section--white">
     <div class="container">
       <div class="feature">
-        <div class="feature__image" style={`background-image: url('${images.breakfast}')`}></div>
+        <div class="feature__image" style={`background-image: url('${images.bedroom}')`}></div>
         <div class="feature__content">
           <p class="section__eyebrow">Breakfast</p>
           <h2 class="section__title">A simple, genuine start to the day</h2>
@@ -117,6 +117,23 @@ const strings = t(lang);
   </section>
 
   <section class="section section--cream">
+    <div class="container">
+      <p class="section__eyebrow">Gallery</p>
+      <h2 class="section__title">A look at the property</h2>
+      <p class="section__lead">
+        Facade, garden, interiors and jacuzzi: a selection of photos from Agriturismo Villalba.
+      </p>
+      <div class="gallery-grid">
+        {gallery.map((photo) => (
+          <figure class="gallery-grid__item">
+            <img src={photo.src} alt={photo.alt} loading="lazy" width="800" height="600" />
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
     <div class="container">
       <CtaBand
         lang={lang}

@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# originali foto ad alta risoluzione (usare public/images/ ottimizzate)
+public/foto/

@@ -16,7 +16,7 @@ interface Props {
 
 const { lang, page, title, description, ogImage } = Astro.props;
 const fullTitle = page === 'home' ? title : `${title} | ${site.name}`;
-const image = ogImage ?? `${site.domain}/og-default.jpg`;
+const image = ogImage ?? `${site.domain}/images/facciata.jpg`;
 ---
 
 <!doctype html>

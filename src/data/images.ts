@@ -1,23 +1,32 @@
-// Sostituire con foto reali della struttura in public/images/
+// Foto ottimizzate in public/images/ (originali in public/foto/, non versionati)
 export const images = {
-  hero:
-    'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80',
-  tuscany:
-    'https://images.unsplash.com/photo-1523532014332-89148b9acdc4?w=1200&q=80',
-  farmhouse:
-    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-  garden:
-    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80',
-  dinner:
-    'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80',
-  cooking:
-    'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&q=80',
-  breakfast:
-    'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1200&q=80',
-  aperitivo:
-    'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d42?w=1200&q=80',
-  arezzo:
-    'https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80',
-  jacuzzi:
-    'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200&q=80',
+  hero: '/images/facciata.jpg',
+  tuscany: '/images/visuale.jpg',
+  farmhouse: '/images/facciata_2.jpg',
+  garden: '/images/esterno.jpg',
+  dinner: '/images/interno_3.jpg',
+  cooking: '/images/interno.jpg',
+  breakfast: '/images/interno_2.jpg',
+  aperitivo: '/images/jacuzzi_giorno.jpg',
+  arezzo: '/images/esterno.jpg',
+  jacuzzi: '/images/jacuzzi.jpg',
+  bedroom: '/images/letto.jpg',
+  bathroom: '/images/bagno.jpg',
+  living: '/images/interno.jpg',
+  jacuzziSunset: '/images/jacuzzi_tramonto_2.jpg',
 } as const;
+
+export const gallery = [
+  { src: '/images/facciata.jpg', alt: 'Facciata dell\'agriturismo' },
+  { src: '/images/esterno.jpg', alt: 'Giardino con vista su Arezzo' },
+  { src: '/images/visuale.jpg', alt: 'Panorama dalle colline' },
+  { src: '/images/interno.jpg', alt: 'Interni della struttura' },
+  { src: '/images/interno_3.jpg', alt: 'Soggiorno con vista sul giardino' },
+  { src: '/images/letto.jpg', alt: 'Camera da letto' },
+  { src: '/images/interno_camera.jpg', alt: 'Camera indipendente' },
+  { src: '/images/bagno.jpg', alt: 'Bagno' },
+  { src: '/images/jacuzzi.jpg', alt: 'Jacuzzi in giardino' },
+  { src: '/images/jacuzzi_giorno.jpg', alt: 'Jacuzzi di giorno' },
+  { src: '/images/jacuzzi_notte.jpg', alt: 'Jacuzzi di sera' },
+  { src: '/images/esterno_2.jpg', alt: 'Spazi esterni' },
+] as const;

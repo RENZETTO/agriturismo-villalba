@@ -36,4 +36,6 @@ Output in `dist/`
 
 ## Foto
 
-Sostituire le immagini placeholder in `src/data/images.ts` con foto reali in `public/images/`.
+1. Metti gli originali in `public/foto/` (cartella ignorata da git)
+2. Genera le versioni web in `public/images/` (JPG ottimizzati)
+3. Aggiorna i percorsi in `src/data/images.ts`
